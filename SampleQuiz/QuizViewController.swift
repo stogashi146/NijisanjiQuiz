@@ -30,6 +30,7 @@ class QuizViewController: UIViewController {
 
         csvArray = loadCSV(fileName: "quiz\(selectLevel)")
         csvArray.shuffle()
+        quizNumberLabel.text = "第１問"
         // 1問目を代入
         quizArray = csvArray[quizCount].components(separatedBy: ",")
         quizTextView.text = quizArray[0]
