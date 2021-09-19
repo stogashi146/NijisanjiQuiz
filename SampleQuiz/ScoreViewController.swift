@@ -20,7 +20,7 @@ class ScoreViewController: UIViewController {
     }
     // 2つ前の画面に戻る
     @IBAction func toTopButtonAction(_ sender: Any) {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true)
     }
     /*
     // MARK: - Navigation
