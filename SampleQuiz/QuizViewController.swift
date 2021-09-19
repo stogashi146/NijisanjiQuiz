@@ -16,6 +16,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var answerButton3: UIButton!
     @IBOutlet weak var answerButton4: UIButton!
     @IBOutlet weak var judgeImageView: UIImageView!
+    @IBOutlet weak var secondsLabel: UILabel!
     
     //問題を格納する配列を宣言
     var bannerView: GADBannerView!
@@ -24,15 +25,18 @@ class QuizViewController: UIViewController {
     var quizCount = 0
     var correctCount = 0
     var selectLevel = 0
+    var secondsRemaing = 10
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //　AdMob
         bannerView = GADBannerView(adSize: kGADAdSizeBanner)
         bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         addBannerViewToView(bannerView)
+        
         print("選択したのはレベル\(selectLevel)")
 
         csvArray = loadCSV(fileName: "quiz\(selectLevel)")
@@ -46,6 +50,7 @@ class QuizViewController: UIViewController {
         answerButton3.setTitle(quizArray[4], for: .normal)
         answerButton4.setTitle(quizArray[5], for: .normal)
         
+        // ボタンの枠線
         answerButton1.layer.borderWidth = 2
         answerButton1.layer.borderColor = UIColor.black.cgColor
         answerButton2.layer.borderWidth = 2
@@ -55,9 +60,26 @@ class QuizViewController: UIViewController {
         answerButton4.layer.borderWidth = 2
         answerButton4.layer.borderColor = UIColor.black.cgColor
         
+        // カウントダウン
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        secondsLabel.text = String(secondsRemaing)
+        
         // Do any additional setup after loading the view.
     }
     
+    // カウントダウン
+    @IBAction func updateCounter() {
+        secondsRemaing -= 1
+        secondsLabel.text = String(secondsRemaing)
+        print(secondsRemaing)
+        if secondsRemaing == 0 {
+            timer.invalidate()
+            print("不正解")
+            judgeImageView.image = UIImage(named: "incorrect")
+            btnHidden()
+            
+        }
+    }
     //　正解数correctCountをScoreVCでしようできるようにする
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let scoreVC = segue.destination as! ScoreViewController
@@ -69,12 +91,18 @@ class QuizViewController: UIViewController {
         if sender.tag == Int(quizArray[1]){
             correctCount += 1
             print("正解")
+            timer.invalidate()
             judgeImageView.image = UIImage(named: "correct")
         } else {
             print("不正解")
+            timer.invalidate()
             judgeImageView.image = UIImage(named: "incorrect")
         }
         print("スコア：\(correctCount)")
+        btnHidden()
+    }
+    
+    @IBAction func btnHidden() {
         judgeImageView.isHidden = false // 次回以降も○×表示できるようにする
         // 選択肢のダブルタップを防止
         answerButton1.isEnabled = false
@@ -88,9 +116,12 @@ class QuizViewController: UIViewController {
             self.answerButton2.isEnabled = true
             self.answerButton3.isEnabled = true
             self.answerButton4.isEnabled = true
+            self.secondsRemaing = 10
+            self.secondsLabel.text = String(self.secondsRemaing)
             self.nextQuiz()
         }
     }
+    
     //　次の問題を読み込む
     func nextQuiz() {
         quizCount += 1
@@ -103,6 +134,8 @@ class QuizViewController: UIViewController {
         answerButton2.setTitle(quizArray[3], for: .normal)
         answerButton3.setTitle(quizArray[4], for: .normal)
         answerButton4.setTitle(quizArray[5], for: .normal)
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
         } else {
             performSegue(withIdentifier: "toScoreVC", sender: nil)
         }
@@ -122,6 +155,7 @@ class QuizViewController: UIViewController {
         return csvArray
     }
     
+    //GoogleAdMob
     func addBannerViewToView(_ bannerView: GADBannerView) {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bannerView)

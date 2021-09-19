@@ -211,7 +211,6 @@
 		C69BB31B26F56A5100B34C67 /* SampleQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				C69BB33A26F6E1DA00B34C67 /* SelectLevelViewController.swift */,
 				C69BB31C26F56A5100B34C67 /* AppDelegate.swift */,
 				C69BB31E26F56A5100B34C67 /* SceneDelegate.swift */,
 				C69BB33626F6DB4E00B34C67 /* correct.png */,
@@ -222,6 +221,7 @@
 				C69BB33426F5716700B34C67 /* quiz1.csv */,
 				C69BB34026F6EF9000B34C67 /* quiz2.csv */,
 				C69BB34226F6EFF600B34C67 /* quiz3.csv */,
+				C69BB33A26F6E1DA00B34C67 /* SelectLevelViewController.swift */,
 				C69BB33226F56CF200B34C67 /* ScoreViewController.swift */,
 				C69BB33026F56BC800B34C67 /* QuizViewController.swift */,
 				C69BB32526F56A5300B34C67 /* Assets.xcassets */,
