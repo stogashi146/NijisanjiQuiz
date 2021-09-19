@@ -92,6 +92,10 @@
                                     <action selector="btnActionWithSender:" destination="4DI-vM-lZZ" eventType="touchUpInside" id="OZ8-Qe-IgC"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SID-td-LPf">
+                                <rect key="frame" x="20" y="100" width="374" height="374"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hx-g1-VRK">
                                 <rect key="frame" x="15" y="466" width="374" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -110,6 +114,7 @@
                         <outlet property="answerButton2" destination="MVm-wX-BZa" id="vnl-YG-dYJ"/>
                         <outlet property="answerButton3" destination="UGX-iM-6AR" id="yaD-FX-V1Z"/>
                         <outlet property="answerButton4" destination="re2-fq-Jg2" id="mPj-c1-o0W"/>
+                        <outlet property="judgeImageView" destination="SID-td-LPf" id="9GG-rA-iXK"/>
                         <outlet property="quizNumberLabel" destination="8tC-de-N6d" id="EZA-Ae-oG7"/>
                         <outlet property="quizTextView" destination="z79-8K-57P" id="shA-zb-r3Y"/>
                         <segue destination="67J-3l-p5x" kind="presentation" identifier="toScoreVC" id="tEU-WR-9GF"/>

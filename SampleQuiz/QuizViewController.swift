@@ -14,6 +14,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var answerButton2: UIButton!
     @IBOutlet weak var answerButton3: UIButton!
     @IBOutlet weak var answerButton4: UIButton!
+    @IBOutlet weak var judgeImageView: UIImageView!
     
     //問題を格納する配列を宣言
     var csvArray: [String] = []
@@ -48,11 +49,27 @@ class QuizViewController: UIViewController {
         if sender.tag == Int(quizArray[1]){
             correctCount += 1
             print("正解")
+            judgeImageView.image = UIImage(named: "correct")
         } else {
             print("不正解")
+            judgeImageView.image = UIImage(named: "incorrect")
         }
         print("スコア：\(correctCount)")
-        nextQuiz()
+        judgeImageView.isHidden = false // 次回以降も○×表示できるようにする
+        // 選択肢のダブルタップを防止
+        answerButton1.isEnabled = false
+        answerButton2.isEnabled = false
+        answerButton3.isEnabled = false
+        answerButton4.isEnabled = false
+        // ○×を0.5秒後に非表示
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.judgeImageView.isHidden = true
+            self.answerButton1.isEnabled = true
+            self.answerButton2.isEnabled = true
+            self.answerButton3.isEnabled = true
+            self.answerButton4.isEnabled = true
+            self.nextQuiz()
+        }
     }
     //　次の問題を読み込む
     func nextQuiz() {
