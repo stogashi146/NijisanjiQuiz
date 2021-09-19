@@ -65,17 +65,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hx-g1-VRK">
-                                <rect key="frame" x="174" y="467" width="72" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="btnActionWithSender:" destination="4DI-vM-lZZ" eventType="touchUpInside" id="ieF-sb-f2Q"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVm-wX-BZa">
-                                <rect key="frame" x="174" y="553" width="72" height="42"/>
+                                <rect key="frame" x="20" y="553" width="364" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Button"/>
@@ -84,7 +75,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGX-iM-6AR">
-                                <rect key="frame" x="174" y="639" width="72" height="42"/>
+                                <rect key="frame" x="20" y="639" width="364" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Button"/>
@@ -93,7 +84,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="re2-fq-Jg2">
-                                <rect key="frame" x="174" y="724" width="72" height="42"/>
+                                <rect key="frame" x="20" y="724" width="364" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Button"/>
@@ -101,10 +92,27 @@
                                     <action selector="btnActionWithSender:" destination="4DI-vM-lZZ" eventType="touchUpInside" id="OZ8-Qe-IgC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hx-g1-VRK">
+                                <rect key="frame" x="15" y="466" width="374" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnActionWithSender:" destination="4DI-vM-lZZ" eventType="touchUpInside" id="ieF-sb-f2Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wyw-XF-m8N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="answerButton1" destination="6hx-g1-VRK" id="fjA-EY-zRZ"/>
+                        <outlet property="answerButton2" destination="MVm-wX-BZa" id="vnl-YG-dYJ"/>
+                        <outlet property="answerButton3" destination="UGX-iM-6AR" id="yaD-FX-V1Z"/>
+                        <outlet property="answerButton4" destination="re2-fq-Jg2" id="mPj-c1-o0W"/>
+                        <outlet property="quizNumberLabel" destination="8tC-de-N6d" id="EZA-Ae-oG7"/>
+                        <outlet property="quizTextView" destination="z79-8K-57P" id="shA-zb-r3Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNd-QZ-O8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
