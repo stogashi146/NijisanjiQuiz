@@ -23,6 +23,7 @@
 		C660BFE526F710AB00A6A561 /* Google-Mobile-Ads-SDK.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C660BFD726F710AB00A6A561 /* Google-Mobile-Ads-SDK.debug.xcconfig */; };
 		C660BFE626F710AB00A6A561 /* Google-Mobile-Ads-SDK.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C660BFD326F710AB00A6A561 /* Google-Mobile-Ads-SDK.release.xcconfig */; };
 		C660BFE726F710AB00A6A561 /* Google-Mobile-Ads-SDK-xcframeworks.sh in Resources */ = {isa = PBXBuildFile; fileRef = C660BFD426F710AB00A6A561 /* Google-Mobile-Ads-SDK-xcframeworks.sh */; };
+		C660BFEA26F72B7C00A6A561 /* launchImageView.png in Resources */ = {isa = PBXBuildFile; fileRef = C660BFE926F72B7C00A6A561 /* launchImageView.png */; };
 		C69BB31D26F56A5100B34C67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69BB31C26F56A5100B34C67 /* AppDelegate.swift */; };
 		C69BB31F26F56A5100B34C67 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69BB31E26F56A5100B34C67 /* SceneDelegate.swift */; };
 		C69BB32126F56A5100B34C67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69BB32026F56A5100B34C67 /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		C660BFD626F710AB00A6A561 /* Google-Mobile-Ads-SDK-xcframeworks.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "Google-Mobile-Ads-SDK-xcframeworks.sh"; sourceTree = "<group>"; };
 		C660BFD726F710AB00A6A561 /* Google-Mobile-Ads-SDK.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Google-Mobile-Ads-SDK.debug.xcconfig"; sourceTree = "<group>"; };
 		C660BFD826F710AB00A6A561 /* Google-Mobile-Ads-SDK.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Google-Mobile-Ads-SDK.release.xcconfig"; sourceTree = "<group>"; };
+		C660BFE926F72B7C00A6A561 /* launchImageView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImageView.png; sourceTree = "<group>"; };
 		C69BB31926F56A5100B34C67 /* SampleQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69BB31C26F56A5100B34C67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C69BB31E26F56A5100B34C67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +182,14 @@
 			path = "Pods/Target Support Files/Google-Mobile-Ads-SDK";
 			sourceTree = SOURCE_ROOT;
 		};
+		C660BFE826F72B7C00A6A561 /* launchImage */ = {
+			isa = PBXGroup;
+			children = (
+				C660BFE926F72B7C00A6A561 /* launchImageView.png */,
+			);
+			path = launchImage;
+			sourceTree = "<group>";
+		};
 		C69BB31026F56A5100B34C67 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +216,7 @@
 				C69BB31E26F56A5100B34C67 /* SceneDelegate.swift */,
 				C69BB33626F6DB4E00B34C67 /* correct.png */,
 				C69BB33726F6DB4F00B34C67 /* incorrect.png */,
+				C660BFE826F72B7C00A6A561 /* launchImage */,
 				C69BB32026F56A5100B34C67 /* ViewController.swift */,
 				C69BB32226F56A5100B34C67 /* Main.storyboard */,
 				C69BB33426F5716700B34C67 /* quiz1.csv */,
@@ -285,6 +296,7 @@
 				C69BB33826F6DB4F00B34C67 /* correct.png in Resources */,
 				C660BFE526F710AB00A6A561 /* Google-Mobile-Ads-SDK.debug.xcconfig in Resources */,
 				C69BB33926F6DB4F00B34C67 /* incorrect.png in Resources */,
+				C660BFEA26F72B7C00A6A561 /* launchImageView.png in Resources */,
 				C660BFDB26F710AB00A6A561 /* README.txt in Resources */,
 				C660BFE626F710AB00A6A561 /* Google-Mobile-Ads-SDK.release.xcconfig in Resources */,
 				C660BFDD26F710AB00A6A561 /* LICENSE in Resources */,
