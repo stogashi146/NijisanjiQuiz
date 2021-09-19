@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class QuizViewController: UIViewController {
     @IBOutlet weak var quizNumberLabel: UILabel!
@@ -17,6 +18,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var judgeImageView: UIImageView!
     
     //問題を格納する配列を宣言
+    var bannerView: GADBannerView!
     var csvArray: [String] = []
     var quizArray: [String] = []
     var quizCount = 0
@@ -26,6 +28,11 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        addBannerViewToView(bannerView)
         print("選択したのはレベル\(selectLevel)")
 
         csvArray = loadCSV(fileName: "quiz\(selectLevel)")
@@ -38,6 +45,15 @@ class QuizViewController: UIViewController {
         answerButton2.setTitle(quizArray[3], for: .normal)
         answerButton3.setTitle(quizArray[4], for: .normal)
         answerButton4.setTitle(quizArray[5], for: .normal)
+        
+        answerButton1.layer.borderWidth = 2
+        answerButton1.layer.borderColor = UIColor.black.cgColor
+        answerButton2.layer.borderWidth = 2
+        answerButton2.layer.borderColor = UIColor.black.cgColor
+        answerButton3.layer.borderWidth = 2
+        answerButton3.layer.borderColor = UIColor.black.cgColor
+        answerButton4.layer.borderWidth = 2
+        answerButton4.layer.borderColor = UIColor.black.cgColor
         
         // Do any additional setup after loading the view.
     }
@@ -105,6 +121,27 @@ class QuizViewController: UIViewController {
         }
         return csvArray
     }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+          [NSLayoutConstraint(item: bannerView,
+                              attribute: .bottom,
+                              relatedBy: .equal,
+                              toItem: view.safeAreaLayoutGuide,
+                              attribute: .bottom,
+                              multiplier: 1,
+                              constant: 0),
+           NSLayoutConstraint(item: bannerView,
+                              attribute: .centerX,
+                              relatedBy: .equal,
+                              toItem: view,
+                              attribute: .centerX,
+                              multiplier: 1,
+                              constant: 0)
+          ])
+       }
     /*
     // MARK: - Navigation
 
