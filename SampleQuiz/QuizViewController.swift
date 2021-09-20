@@ -17,6 +17,10 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var answerButton4: UIButton!
     @IBOutlet weak var judgeImageView: UIImageView!
     @IBOutlet weak var secondsLabel: UILabel!
+    @IBOutlet weak var lifeImage1: UIImageView!
+    @IBOutlet weak var lifeImage2: UIImageView!
+    @IBOutlet weak var lifeImage3: UIImageView!
+    
     
     //問題を格納する配列を宣言
     var bannerView: GADBannerView!
@@ -27,6 +31,7 @@ class QuizViewController: UIViewController {
     var selectLevel = 0
     var secondsRemaing = 10
     var timer = Timer()
+    var life = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +69,11 @@ class QuizViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
         secondsLabel.text = String(secondsRemaing)
         
+        // ライフゲージ
+        lifeImage1.image = UIImage(named: "life")
+        lifeImage2.image = UIImage(named: "life")
+        lifeImage3.image = UIImage(named: "life")
+        
         // Do any additional setup after loading the view.
     }
     
@@ -71,19 +81,39 @@ class QuizViewController: UIViewController {
     @IBAction func updateCounter() {
         secondsRemaing -= 1
         secondsLabel.text = String(secondsRemaing)
+        if secondsRemaing < 4 {
+            secondsLabel.textColor = UIColor.red
+        }
         print(secondsRemaing)
         if secondsRemaing == 0 {
             timer.invalidate()
             print("不正解")
             judgeImageView.image = UIImage(named: "incorrect")
+            lifeDestroy()
             btnHidden()
-            
         }
     }
-    //　正解数correctCountをScoreVCでしようできるようにする
+    
+    // ライフ削除
+    @IBAction func lifeDestroy() {
+        life -= 1
+        switch life {
+        case 2:
+            lifeImage3.isHidden = true
+        case 1:
+            lifeImage2.isHidden = true
+        case 0:
+            lifeImage1.isHidden = true
+        default:
+            return
+        }
+    }
+    
+    //　正解数correctCountをScoreVCで使用できるようにする
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let scoreVC = segue.destination as! ScoreViewController
         scoreVC.correct = correctCount
+        scoreVC.lifeRemaing = life
     }
     
     // ボタンを押下したとき呼ばれる
@@ -97,6 +127,7 @@ class QuizViewController: UIViewController {
             print("不正解")
             timer.invalidate()
             judgeImageView.image = UIImage(named: "incorrect")
+            lifeDestroy()
         }
         print("スコア：\(correctCount)")
         btnHidden()
@@ -126,7 +157,9 @@ class QuizViewController: UIViewController {
     func nextQuiz() {
         quizCount += 1
         //現在の問題数が、問題数より小さい場合、スコア画面に遷移
-        if quizCount < csvArray.count{
+        if life == 0 {
+            performSegue(withIdentifier: "toScoreVC", sender: nil)
+        } else if quizCount < csvArray.count {
         quizArray = csvArray[quizCount].components(separatedBy: ",")
         quizNumberLabel.text = "第\(quizCount + 1)問"
         quizTextView.text = quizArray[0]
@@ -134,7 +167,6 @@ class QuizViewController: UIViewController {
         answerButton2.setTitle(quizArray[3], for: .normal)
         answerButton3.setTitle(quizArray[4], for: .normal)
         answerButton4.setTitle(quizArray[5], for: .normal)
-        
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
         } else {
             performSegue(withIdentifier: "toScoreVC", sender: nil)

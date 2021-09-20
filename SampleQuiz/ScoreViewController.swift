@@ -12,11 +12,16 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var returnTopButton: UIButton!
     var correct = 0
+    var lifeRemaing = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scoreLabel.text = "\(correct)問正解！"
+        if lifeRemaing == 0 {
+            scoreLabel.text = "ゲームオーバー！\nスコアは\(correct)問正解！"
+        } else {
+            scoreLabel.text = "クリア！おめでとう！\n\(correct)問正解！"
+        }
         
         shareButton.layer.borderWidth = 2
         shareButton.layer.borderColor = UIColor.black.cgColor
@@ -32,7 +37,7 @@ class ScoreViewController: UIViewController {
     }
     // 2つ前の画面に戻る
     @IBAction func toTopButtonAction(_ sender: Any) {
-        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
     }
     /*
     // MARK: - Navigation
