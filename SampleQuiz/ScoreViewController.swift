@@ -41,7 +41,7 @@ class ScoreViewController: UIViewController {
         self.presentingViewController?.presentingViewController?.dismiss(animated: true)
     }
     
-    // 最高スコアを保存
+    // 最高スコアを保存 
     @IBAction func highScoreSave(_ correct:Int ,_ level:Int) {
         print(level)
         switch level {
