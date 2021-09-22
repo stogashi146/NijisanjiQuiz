@@ -114,6 +114,7 @@ class QuizViewController: UIViewController {
         let scoreVC = segue.destination as! ScoreViewController
         scoreVC.correct = correctCount
         scoreVC.lifeRemaing = life
+        scoreVC.selectLevel = selectLevel
     }
     
     // ボタンを押下したとき呼ばれる
@@ -164,9 +165,14 @@ class QuizViewController: UIViewController {
         quizNumberLabel.text = "第\(quizCount + 1)問"
         quizTextView.text = quizArray[0]
         answerButton1.setTitle(quizArray[2], for: .normal)
+        answerButton1.titleLabel?.adjustsFontSizeToFitWidth = true
         answerButton2.setTitle(quizArray[3], for: .normal)
+        answerButton2.titleLabel?.adjustsFontSizeToFitWidth = true
         answerButton3.setTitle(quizArray[4], for: .normal)
+        answerButton3.titleLabel?.adjustsFontSizeToFitWidth = true
         answerButton4.setTitle(quizArray[5], for: .normal)
+        answerButton4.titleLabel?.adjustsFontSizeToFitWidth = true
+        secondsLabel.textColor = UIColor.black
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
         } else {
             performSegue(withIdentifier: "toScoreVC", sender: nil)

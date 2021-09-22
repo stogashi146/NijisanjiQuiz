@@ -19,17 +19,37 @@ class SelectLevelViewController: UIViewController {
         level1Button.layer.borderWidth = 2
         level1Button.layer.borderColor = UIColor.black.cgColor
         
+
         level2Button.layer.borderWidth = 2
         level2Button.layer.borderColor = UIColor.black.cgColor
         
         level3Button.layer.borderWidth = 2
         level3Button.layer.borderColor = UIColor.black.cgColor
+        level3Button.isHidden = true
+        
+        levelHidden()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        levelHidden()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         let quizVC = segue.destination as! QuizViewController
         quizVC.selectLevel = selectTag
+    }
+    // むずかしいの解禁
+    @IBAction func levelHidden() {
+        if UserDefaults.standard.integer(forKey: "highScoreLeve1") < 30 {
+            level2Button.isEnabled = false
+            level2Button.titleLabel?.adjustsFontSizeToFitWidth = true
+            level2Button.setTitle("ふつうを30問正解で解禁", for: .normal)
+        } else {
+            level2Button.isEnabled = true
+            level2Button.titleLabel?.adjustsFontSizeToFitWidth = true
+            level2Button.setTitle("むずかしい", for: .normal)
+        }
     }
     
     @IBAction func leveButtonAction(sender: UIButton) {
