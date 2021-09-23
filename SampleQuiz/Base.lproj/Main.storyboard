@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="CP Font.ttf">
+            <string>CP-Font</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -312,7 +317,7 @@ Cg
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8tC-de-N6d">
-                                <rect key="frame" x="20" y="15" width="157" height="30"/>
+                                <rect key="frame" x="20" y="15" width="98" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -336,8 +341,8 @@ Cg
                                     <constraint firstAttribute="height" constant="374" id="PSQ-Mm-Yzn"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXQ-lF-bVO">
-                                <rect key="frame" x="301" y="50" width="54" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXQ-lF-bVO">
+                                <rect key="frame" x="312" y="50" width="43" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
@@ -370,6 +375,18 @@ Cg
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ライフ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3d-x5-yuz">
+                                <rect key="frame" x="142.5" y="15" width="90" height="30"/>
+                                <fontDescription key="fontDescription" name="CP-Font" family="CP Font" pointSize="30"/>
+                                <color key="textColor" red="0.90980392160000001" green="0.0039215686269999999" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイム" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trE-SJ-5nr">
+                                <rect key="frame" x="265" y="15" width="90" height="30"/>
+                                <fontDescription key="fontDescription" name="CP-Font" family="CP Font" pointSize="30"/>
+                                <color key="textColor" red="0.90980392160000001" green="0.0039215686269999999" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wyw-XF-m8N"/>
                         <color key="backgroundColor" red="0.87213481410000004" green="0.91895517680000005" blue="0.79261598550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -381,12 +398,15 @@ Cg
                             <constraint firstItem="SID-td-LPf" firstAttribute="centerX" secondItem="nMU-db-kLb" secondAttribute="centerX" id="KMV-mp-c96"/>
                             <constraint firstItem="8tC-de-N6d" firstAttribute="leading" secondItem="Wyw-XF-m8N" secondAttribute="leading" constant="20" id="Ku4-87-FIh"/>
                             <constraint firstItem="z79-8K-57P" firstAttribute="top" secondItem="ZXQ-lF-bVO" secondAttribute="bottom" constant="20" id="MwZ-RO-8Q6"/>
+                            <constraint firstItem="NB6-Nv-4iA" firstAttribute="top" secondItem="V3d-x5-yuz" secondAttribute="bottom" constant="5" id="QmO-T1-Rp8"/>
                             <constraint firstAttribute="bottom" secondItem="mgU-ta-wFQ" secondAttribute="bottom" id="RNT-g1-yND"/>
                             <constraint firstItem="x48-fn-zWM" firstAttribute="leading" secondItem="Wyw-XF-m8N" secondAttribute="leading" constant="40" id="TNJ-aZ-TMJ"/>
                             <constraint firstItem="Wyw-XF-m8N" firstAttribute="bottom" secondItem="x48-fn-zWM" secondAttribute="bottom" constant="60" id="TRP-hq-tnx"/>
                             <constraint firstItem="NB6-Nv-4iA" firstAttribute="centerX" secondItem="nMU-db-kLb" secondAttribute="centerX" id="V1W-eg-l3Y"/>
+                            <constraint firstItem="ZXQ-lF-bVO" firstAttribute="top" secondItem="trE-SJ-5nr" secondAttribute="bottom" constant="5" id="YR3-g9-aBR"/>
                             <constraint firstItem="Wyw-XF-m8N" firstAttribute="trailing" secondItem="ZXQ-lF-bVO" secondAttribute="trailing" constant="20" id="bH2-rv-iJh"/>
                             <constraint firstItem="8tC-de-N6d" firstAttribute="top" secondItem="Wyw-XF-m8N" secondAttribute="top" constant="15" id="bq7-ch-WCm"/>
+                            <constraint firstItem="V3d-x5-yuz" firstAttribute="centerX" secondItem="nMU-db-kLb" secondAttribute="centerX" id="bzd-eh-G0A"/>
                             <constraint firstItem="Wyw-XF-m8N" firstAttribute="trailing" secondItem="z79-8K-57P" secondAttribute="trailing" constant="20" id="l4E-0D-bfx"/>
                             <constraint firstItem="x48-fn-zWM" firstAttribute="top" secondItem="z79-8K-57P" secondAttribute="bottom" constant="30" id="oRy-AR-MWg"/>
                             <constraint firstItem="NB6-Nv-4iA" firstAttribute="top" secondItem="Wyw-XF-m8N" secondAttribute="top" constant="50" id="pPZ-Vy-S7Y"/>
@@ -394,6 +414,7 @@ Cg
                             <constraint firstItem="ZXQ-lF-bVO" firstAttribute="top" secondItem="Wyw-XF-m8N" secondAttribute="top" constant="50" id="qFS-sS-CF9"/>
                             <constraint firstItem="mgU-ta-wFQ" firstAttribute="leading" secondItem="Wyw-XF-m8N" secondAttribute="leading" id="ri8-pA-Zec"/>
                             <constraint firstItem="mgU-ta-wFQ" firstAttribute="trailing" secondItem="Wyw-XF-m8N" secondAttribute="trailing" id="tjd-NX-pWW"/>
+                            <constraint firstItem="Wyw-XF-m8N" firstAttribute="trailing" secondItem="trE-SJ-5nr" secondAttribute="trailing" constant="20" id="zRP-AJ-kmC"/>
                         </constraints>
                     </view>
                     <connections>
@@ -405,9 +426,11 @@ Cg
                         <outlet property="lifeImage1" destination="oW3-D2-9q6" id="FwF-zp-EkR"/>
                         <outlet property="lifeImage2" destination="xPE-s2-3W8" id="L4R-yb-16w"/>
                         <outlet property="lifeImage3" destination="0vi-SH-Z1c" id="OXE-Sk-bdj"/>
+                        <outlet property="lifeLabel" destination="V3d-x5-yuz" id="6cN-Ji-vVF"/>
                         <outlet property="quizNumberLabel" destination="8tC-de-N6d" id="EZA-Ae-oG7"/>
                         <outlet property="quizTextView" destination="z79-8K-57P" id="shA-zb-r3Y"/>
                         <outlet property="secondsLabel" destination="ZXQ-lF-bVO" id="BxU-5g-GVZ"/>
+                        <outlet property="timeLabel" destination="trE-SJ-5nr" id="ycB-lx-znJ"/>
                         <segue destination="67J-3l-p5x" kind="presentation" identifier="toScoreVC" id="tEU-WR-9GF"/>
                     </connections>
                 </viewController>

@@ -68,6 +68,8 @@
 		C660BFE926F72B7C00A6A561 /* launchImageView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImageView.png; sourceTree = "<group>"; };
 		C660BFED26F8CAE900A6A561 /* life.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = life.png; sourceTree = "<group>"; };
 		C660BFEF26FA2BD000A6A561 /* 128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 128.png; sourceTree = "<group>"; };
+		C68BA1EA26FC1084009DA634 /* CP Font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CP Font.ttf"; sourceTree = "<group>"; };
+		C68BA1EB26FC1092009DA634 /* Append CP Font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Append CP Font.ttf"; sourceTree = "<group>"; };
 		C69BB31926F56A5100B34C67 /* SampleQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69BB31C26F56A5100B34C67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C69BB31E26F56A5100B34C67 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +202,15 @@
 			path = launchImage;
 			sourceTree = "<group>";
 		};
+		C68BA1E926FC0FFD009DA634 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C68BA1EB26FC1092009DA634 /* Append CP Font.ttf */,
+				C68BA1EA26FC1084009DA634 /* CP Font.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		C69BB31026F56A5100B34C67 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +232,7 @@
 		C69BB31B26F56A5100B34C67 /* SampleQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				C68BA1E926FC0FFD009DA634 /* fonts */,
 				C69BB31C26F56A5100B34C67 /* AppDelegate.swift */,
 				C69BB31E26F56A5100B34C67 /* SceneDelegate.swift */,
 				C69BB33626F6DB4E00B34C67 /* correct.png */,

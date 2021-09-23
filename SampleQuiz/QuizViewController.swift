@@ -20,7 +20,8 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var lifeImage1: UIImageView!
     @IBOutlet weak var lifeImage2: UIImageView!
     @IBOutlet weak var lifeImage3: UIImageView!
-    
+    @IBOutlet weak var lifeLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     //問題を格納する配列を宣言
     var bannerView: GADBannerView!
