@@ -1,6 +1,6 @@
 # NijisanjiQuiz
 iOS用クイズアプリ
-
+https://apps.apple.com/app/id1587645647
 # 機能一覧
 ## タイトル画面
 - Startボタン
